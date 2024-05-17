@@ -1,6 +1,9 @@
 package com.pluralsight.ui;
+import com.pluralsight.data.ContractDataManager;
 import com.pluralsight.models.Dealership;
 import com.pluralsight.data.DealershipFileManager;
+import com.pluralsight.models.LeaseContract;
+import com.pluralsight.models.SalesContract;
 import com.pluralsight.models.Vehicle;
 
 import java.util.List;
@@ -10,6 +13,7 @@ public class UserInterface
 {
     public Dealership dealership;
     public DealershipFileManager fileManager;
+    private Scanner scanner;
 
 
     public UserInterface()
@@ -119,11 +123,12 @@ public class UserInterface
                     break;
 
                 case 9:
-                    System.out.println(" ");
+                    addLeaseContract();
+                    break;
 
                 case 10:
-                    System.out.println("");
-
+                    addSalesContract();
+                    break;
                 case 0:
                     running = false;
                     System.out.println("Exiting...");
@@ -207,6 +212,46 @@ public class UserInterface
             }
         }
         return null; // Vehicle with the given VIN not found
+    }
+
+    private void addLeaseContract() {
+        System.out.println("Enter contract details:");
+        System.out.print("Date: ");
+        String date = scanner.nextLine();
+        System.out.print("Customer Name: ");
+        String customerName = scanner.nextLine();
+        System.out.print("Customer Email: ");
+        String customerEmail = scanner.nextLine();
+        System.out.print("Vehicle Sold: ");
+        String vehicleSold = scanner.nextLine();
+        System.out.print("Vehicle Price: ");
+        double vehiclePrice = scanner.nextDouble();
+        scanner.nextLine();
+
+        LeaseContract leaseContract = new LeaseContract(date, customerName, customerEmail, vehicleSold, vehiclePrice);
+        ContractDataManager.saveContract(leaseContract);
+    }
+
+    private void addSalesContract() {
+        System.out.println("Enter contract details:");
+        System.out.print("Date: ");
+        String date = scanner.nextLine();
+        System.out.print("Customer Name: ");
+        String customerName = scanner.nextLine();
+        System.out.print("Customer Email: ");
+        String customerEmail = scanner.nextLine();
+        System.out.print("Vehicle Sold: ");
+        String vehicleSold = scanner.nextLine();
+        System.out.print("Vehicle Price: ");
+        double vehiclePrice = scanner.nextDouble();
+        System.out.print("Finance (true/false): ");
+        double processingFee = scanner.nextDouble();
+        System.out.println();
+        boolean finance = scanner.nextBoolean();
+        scanner.nextLine();
+
+        SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicleSold, vehiclePrice, processingFee, finance);
+        ContractDataManager.saveContract(salesContract);
     }
 
 

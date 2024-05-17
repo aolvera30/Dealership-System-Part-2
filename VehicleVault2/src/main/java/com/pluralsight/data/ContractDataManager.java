@@ -12,6 +12,14 @@ import java.util.Scanner;
 public class ContractDataManager {
     private static final String CONTRACT_FILE = "Files/contract.csv";
 
+    public static void saveContract(LeaseContract leaseContract)
+    {
+    }
+
+    public static void saveContract(SalesContract salesContract)
+    {
+    }
+
     public List<Contract> loadContracts() {
         List<Contract> contracts = new ArrayList<>();
 
@@ -53,7 +61,7 @@ public class ContractDataManager {
             for (Contract contract : contracts) {
                 if (contract instanceof SalesContract) {
                     SalesContract salesContract = (SalesContract) contract;
-                    writer.write(String.format("SALE,%s,%s,%s,%s,%.2f,%b\n",
+                    writer.write(String.format("SALE|%s|%s|%s|%s|%|2f|%b\n",
                             salesContract.getDate(),
                             salesContract.getCustomerName(),
                             salesContract.getCustomerEmail(),
@@ -62,7 +70,7 @@ public class ContractDataManager {
                             salesContract.isFinance()));
                 } else if (contract instanceof LeaseContract) {
                     LeaseContract leaseContract = (LeaseContract) contract;
-                    writer.write(String.format("LEASE,%s,%s,%s,%s,%.2f,%.2f\n",
+                    writer.write(String.format("LEASE|%s|%s|%s|%s|%.2f|%.2f\n",
                             leaseContract.getDate(),
                             leaseContract.getCustomerName(),
                             leaseContract.getCustomerEmail(),

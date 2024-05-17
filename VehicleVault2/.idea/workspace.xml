@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7c20599-b4ca-4be9-b7ee-d8645ce86457" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Files/inventory.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dealership2UML.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../Dealership2UML.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_1715620388486.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_1715620470449.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_1715636643928.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_1715636668432.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/files/inventory.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/models/DealershipFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/models/DealershipFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/data/ContractDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/data/ContractDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/models/LeaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/models/LeaseContract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/ui/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,15 +27,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Program.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/PluralSight/Dealership-Application/Dealership-Application"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Program.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/aaronj.rhodes/Pluralsight/Workshops/dealership2/Dealership-System-Part-2/VehicleVault2/pom.xml&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;RainbowCSV.Settings&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Files" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pluralsight.application.Program" />

@@ -13,6 +13,16 @@ public class LeaseContract extends Contract {
         this.leaseFee = leaseFee; // Set lease fee
     }
 
+    public void setEndingValue(double endingValue)
+    {
+        this.endingValue = endingValue;
+    }
+
+    public void setLeaseFee(double leaseFee)
+    {
+        this.leaseFee = leaseFee;
+    }
+
     @Override
     public double getTotalPrice() {
         // Total price calculation logic
