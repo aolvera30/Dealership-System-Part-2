@@ -42,7 +42,7 @@ public class ContractDataManager {
                 } else if (contractType.equals("LEASE")) {
                     double endingValue = Double.parseDouble(parts[5]);
                     double leaseFee = Double.parseDouble(parts[6]);
-                    contract = new LeaseContract(date, customerName, customerEmail, vehicleSold, endingValue, leaseFee);
+                    contract = new LeaseContract(date, customerName, customerEmail, vehicleSold, endingValue);
                 } else {
                     throw new IllegalArgumentException("Unknown contract type: " + contractType);
                 }

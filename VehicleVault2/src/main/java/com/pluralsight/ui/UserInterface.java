@@ -215,7 +215,8 @@ public class UserInterface {
         double vehiclePrice = scanner.nextDouble();
         scanner.nextLine();
 
-        LeaseContract leaseContract = new LeaseContract(date, customerName, customerEmail, vehicleSold, vehiclePrice);
+
+        LeaseContract leaseContract = new LeaseContract(date,customerName, customerEmail, vehicleSold,vehiclePrice);
         ContractDataManager.saveContract(leaseContract);
     }
 
