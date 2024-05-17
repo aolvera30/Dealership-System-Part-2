@@ -1,4 +1,6 @@
 package com.pluralsight.ui;
+
+
 import com.pluralsight.data.ContractDataManager;
 import com.pluralsight.models.Dealership;
 import com.pluralsight.data.DealershipFileManager;
@@ -9,30 +11,22 @@ import com.pluralsight.models.Vehicle;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserInterface
-{
+public class UserInterface {
     public Dealership dealership;
     public DealershipFileManager fileManager;
     private Scanner scanner;
 
-
-    public UserInterface()
-    {
+    public UserInterface() {
         init();
         fileManager = new DealershipFileManager();
-
     }
 
-    private void init()
-    {
+    private void init() {
         DealershipFileManager dealershipFileManager = new DealershipFileManager();
         this.dealership = dealershipFileManager.loadDearlership();
-
     }
 
-
-    public void display()
-    {
+    public void display() {
         init(); // Load the dealership data
 
         Scanner userInput = new Scanner(System.in);
@@ -123,11 +117,11 @@ public class UserInterface
                     break;
 
                 case 9:
-                    addLeaseContract();
+                    addSalesContract();
                     break;
 
                 case 10:
-                    addSalesContract();
+                    addLeaseContract();
                     break;
                 case 0:
                     running = false;
@@ -141,38 +135,34 @@ public class UserInterface
     }
 
     // Helper Method
-    private void displayVehicles(List<Vehicle> vehicles)
-    {
+    private void displayVehicles(List<Vehicle> vehicles) {
         for (Vehicle vehicle : vehicles) {
             // Display each vehicle information
             System.out.println(vehicle.toString());
         }
     }
 
-
-    public void processGetByMakeModelRequest()
-    {
+    public void processGetByMakeModelRequest() {
+        // Implement logic
     }
 
-    public void processGetByYearRequest()
-    {
+    public void processGetByYearRequest() {
+        // Implement logic
     }
 
-    public void processGetByColorRequest()
-    {
+    public void processGetByColorRequest() {
+        // Implement logic
     }
 
-    public void processGetByMileageRequest()
-    {
+    public void processGetByMileageRequest() {
+        // Implement logic
     }
 
-    public void processGetByVehicleTypeRequest()
-    {
+    public void processGetByVehicleTypeRequest() {
+        // Implement logic
     }
 
-
-    public void processGetAllVehiclesRequest()
-    {
+    public void processGetAllVehiclesRequest() {
         // 1. Call the dealership's getAllVehicles() method to get the list of all vehicles
         List<Vehicle> allVehicles = dealership.getAllVehicles();
 
@@ -181,8 +171,7 @@ public class UserInterface
     }
 
     // Add Vehicle
-    public void processAddVehicleRequest(Vehicle vehicle)
-    {
+    public void processAddVehicleRequest(Vehicle vehicle) {
         dealership.addVehicle(vehicle); // Add vehicle to the dealership inventory
         fileManager.saveDealership(dealership); // Save the updated inventory
         System.out.println("Vehicle added successfully.");
@@ -190,8 +179,7 @@ public class UserInterface
     }
 
     // Remove Vehicle
-    public void processRemoveVehicleRequest(int vin)
-    {
+    public void processRemoveVehicleRequest(int vin) {
         Vehicle vehicleToRemove = findVehicleByVIN(vin);
         if (vehicleToRemove != null) {
             dealership.removeVehicle(vehicleToRemove);
@@ -204,8 +192,7 @@ public class UserInterface
         }
     }
 
-    private Vehicle findVehicleByVIN(int vin)
-    {
+    private Vehicle findVehicleByVIN(int vin) {
         for (Vehicle vehicle : dealership.getAllVehicles()) {
             if (vehicle.getVin() == vin) {
                 return vehicle; // Found the vehicle
@@ -228,7 +215,8 @@ public class UserInterface
         double vehiclePrice = scanner.nextDouble();
         scanner.nextLine();
 
-        LeaseContract leaseContract = new LeaseContract(date, customerName, customerEmail, vehicleSold, vehiclePrice);
+
+        LeaseContract leaseContract = new LeaseContract(date,customerName, customerEmail, vehicleSold,vehiclePrice);
         ContractDataManager.saveContract(leaseContract);
     }
 
@@ -245,14 +233,15 @@ public class UserInterface
         System.out.print("Vehicle Price: ");
         double vehiclePrice = scanner.nextDouble();
         System.out.print("Finance (true/false): ");
-        double processingFee = scanner.nextDouble();
-        System.out.println();
         boolean finance = scanner.nextBoolean();
         scanner.nextLine();
 
         SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicleSold, vehiclePrice, finance);
         ContractDataManager.saveContract(salesContract);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
 }
 
