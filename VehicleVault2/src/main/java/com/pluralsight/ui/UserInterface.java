@@ -250,10 +250,9 @@ public class UserInterface
         boolean finance = scanner.nextBoolean();
         scanner.nextLine();
 
-        SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicleSold, vehiclePrice, processingFee, finance);
+        SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicleSold, vehiclePrice, finance);
         ContractDataManager.saveContract(salesContract);
     }
-
 
 }
 
