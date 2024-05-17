@@ -239,9 +239,6 @@ public class UserInterface {
         SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicleSold, vehiclePrice, finance);
         ContractDataManager.saveContract(salesContract);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/main
 }
 
