@@ -7,6 +7,8 @@ import com.pluralsight.data.DealershipFileManager;
 import com.pluralsight.models.LeaseContract;
 import com.pluralsight.models.SalesContract;
 import com.pluralsight.models.Vehicle;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import java.util.List;
 import java.util.Scanner;
@@ -16,9 +18,14 @@ public class UserInterface {
     public DealershipFileManager fileManager;
     private Scanner scanner;
 
+
     public UserInterface() {
         init();
         fileManager = new DealershipFileManager();
+    }
+
+    {
+        this.scanner = new Scanner(System.in);
     }
 
     private void init() {
@@ -220,25 +227,49 @@ public class UserInterface {
         ContractDataManager.saveContract(leaseContract);
     }
 
-    private void addSalesContract() {
+    private SalesContract addSalesContract() {
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = currentDate.format(formatter);
+
         System.out.println("Enter contract details:");
-        System.out.print("Date: ");
-        String date = scanner.nextLine();
+        System.out.println("Date: " + formattedDate);
+        String date = formattedDate; // Automatically set the date to current date
+
         System.out.print("Customer Name: ");
         String customerName = scanner.nextLine();
+
         System.out.print("Customer Email: ");
         String customerEmail = scanner.nextLine();
+
         System.out.print("Vehicle Sold: ");
         String vehicleSold = scanner.nextLine();
+
         System.out.print("Vehicle Price: ");
         double vehiclePrice = scanner.nextDouble();
+        scanner.nextLine(); // Consume the leftover newline character
+
         System.out.print("Finance (true/false): ");
         boolean finance = scanner.nextBoolean();
-        scanner.nextLine();
+        scanner.nextLine(); // Consume the leftover newline character
 
-        SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicleSold, vehiclePrice, finance);
-        ContractDataManager.saveContract(salesContract);
+        // Create a new SalesContract instance
+        SalesContract contract = new SalesContract(date, customerName, customerEmail, vehicleSold, vehiclePrice, finance);
+
+        // Additional logic to save the contract or display confirmation
+        System.out.println("Sales contract created:");
+        System.out.println("Date: " + contract.getDate());
+        System.out.println("Customer Name: " + contract.getCustomerName());
+        System.out.println("Customer Email: " + contract.getCustomerEmail());
+        System.out.println("Vehicle Sold: " + contract.getVehicleSold());
+        System.out.println("Vehicle Price: " + contract.getVehiclePrice());
+        System.out.println("Processing Fee: " + contract.getProcessingFee());
+        System.out.println("Finance: " + contract.isFinance());
+        System.out.println("Total Price: " + contract.getTotalPrice());
+        System.out.println("Monthly Payment: " + contract.getMonthlyPayment());
+
+        ContractDataManager.saveContract(addSalesContract());
+        return contract;
     }
-
 }
 

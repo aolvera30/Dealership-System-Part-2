@@ -30,7 +30,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "Application.Program.executor": "Run",
+=======
+    "Application.Program.executor": "Debug",
+>>>>>>> ca01e7130979998de5e56498619f3f5ae8fc971f
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
